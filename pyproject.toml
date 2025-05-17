@@ -1,5 +1,6 @@
 [dependency-groups]
 develop = [
+  "django-environ>=0.12.0",
   "django>=5.2.1",
 ]
 linter = [
@@ -9,6 +10,7 @@ linter = [
 test = [
 ]
 type = [
+  "django-stubs>=5.2.0",
   "mypy[faster-cache]>=1.15.0",
 ]
 
@@ -16,7 +18,8 @@ type = [
 authors = [
   {email = "mrprocs@gmail.com", name = "Mohammad Rezazade"},
 ]
-dependencies = []
+dependencies = [
+]
 description = "A project to archive and categorize my knowledge"
 license = {text = "MIT"}
 name = "brain-box"
@@ -28,7 +31,6 @@ indent = 4
 max_line_length = 120
 
 [tool.ruff]
-src = ["src"]
 target-version = "py313"
 
 [tool.ruff.lint]
