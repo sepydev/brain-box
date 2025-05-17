@@ -1,0 +1,68 @@
+[dependency-groups]
+develop = [
+  "django>=5.2.1",
+]
+linter = [
+  "djlint>=1.36.4",
+  "pre-commit>=4.2.0",
+]
+test = [
+]
+type = [
+  "mypy[faster-cache]>=1.15.0",
+]
+
+[project]
+authors = [
+  {email = "mrprocs@gmail.com", name = "Mohammad Rezazade"},
+]
+dependencies = []
+description = "A project to archive and categorize my knowledge"
+license = {text = "MIT"}
+name = "brain-box"
+requires-python = ">=3.13"
+version = "0.1.0"
+
+[tool.djlint]
+indent = 4
+max_line_length = 120
+
+[tool.ruff]
+src = ["src"]
+target-version = "py313"
+
+[tool.ruff.lint]
+ignore = [
+  "S101",  # Use of `assert` detected
+]
+
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+parametrize-values-type = "tuple"
+
+[tool.ruff.lint.flake8-type-checking]
+exempt-modules = []
+runtime-evaluated-base-classes = []
+strict = true
+
+[tool.ruff.lint.isort]
+force-single-line = true
+required-imports = ["from __future__ import annotations"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]
+
+[tool.tomlsort]
+all = true
+spaces_before_inline_comment = 2
+trailing_comma_inline_array = true
+
+[tool.uv]
+default-groups = [
+  "develop",
+  "linter",
+  "test",
+  "type",
+]
+required-version = "==0.7.5"
